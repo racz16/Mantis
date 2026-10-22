@@ -1,0 +1,31 @@
+namespace Mantis.Platform.Input;
+
+public enum GamepadButton : byte
+{
+	South,
+	East,
+	West,
+	North,
+	Back,
+	Guide,
+	Start,
+	LeftStick,
+	RightStick,
+	LeftShoulder,
+	RightShoulder,
+	DPadUp,
+	DPadDown,
+	DPadLeft,
+	DPadRight,
+	Misc1,
+	RightPaddle1,
+	LeftPaddle1,
+	RightPaddle2,
+	LeftPaddle2,
+	Touchpad,
+	Misc2,
+	Misc3,
+	Misc4,
+	Misc5,
+	Misc6,
+}

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Description>Handling windowing, input and platform-specific functionality.</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="SDL3-CS" />
+		<PackageReference Include="SDL3-CS.Linux" />
+		<PackageReference Include="SDL3-CS.Windows" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Mantis.Core\Mantis.Core.csproj" />
+	</ItemGroup>
+
+</Project>

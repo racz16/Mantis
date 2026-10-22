@@ -34,11 +34,11 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <DefineConstants>$(DefineConstants);MANTIS_LOG_TRACE;MANTIS_LOG_DEBUG;MANTIS_LOG_INFO;MANTIS_LOG_WARN;MANTIS_LOG_ERROR;MANTIS_LOG_FATAL</DefineConstants>
+		<DefineConstants>$(DefineConstants);MANTIS_LOG_TRACE;MANTIS_LOG_DEBUG;MANTIS_LOG_INFO;MANTIS_LOG_WARN;MANTIS_LOG_ERROR;MANTIS_LOG_FATAL</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <DefineConstants>$(DefineConstants);MANTIS_LOG_INFO;MANTIS_LOG_WARN;MANTIS_LOG_ERROR;MANTIS_LOG_FATAL</DefineConstants>
+		<DefineConstants>$(DefineConstants);MANTIS_LOG_INFO;MANTIS_LOG_WARN;MANTIS_LOG_ERROR;MANTIS_LOG_FATAL</DefineConstants>
 	</PropertyGroup>
 
 	<ItemGroup>

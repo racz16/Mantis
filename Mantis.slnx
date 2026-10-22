@@ -11,6 +11,7 @@
     <File Path="Directory.Packages.props" />
     <File Path="LICENSE" />
     <File Path="README.md" />
+    <File Path="samples/Sample.Basic/BasicGame.cs" />
   </Folder>
   <Folder Name="/solution items/.github/" />
   <Folder Name="/solution items/.github/workflows/">
@@ -18,6 +19,8 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/Mantis.Core/Mantis.Core.csproj" />
+    <Project Path="src/Mantis.Platform/Mantis.Platform.csproj" Id="0abcd07a-369f-47d5-981b-77c5fa8525ec" />
+    <Project Path="src/Mantis/Mantis.csproj" Id="697ded22-1f31-4c14-83e1-871e23dcaf08" />
   </Folder>
   <Folder Name="/tools/" />
 </Solution>
