@@ -5,7 +5,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\Mantis.Core\Mantis.Core.csproj" />
+	  <ProjectReference Include="..\..\src\Mantis\Mantis.csproj" />
 	</ItemGroup>
 
 </Project>

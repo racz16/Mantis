@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Description>The main Mantis project.</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Mantis.Core\Mantis.Core.csproj" />
+	  <ProjectReference Include="..\Mantis.Platform\Mantis.Platform.csproj" />
+	</ItemGroup>
+
+</Project>

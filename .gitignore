@@ -1,6 +1,7 @@
 .vs/
 .idea/
 .vscode/*
+*.user
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

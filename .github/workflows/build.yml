@@ -22,4 +22,4 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release
       - name: Check formatting
-        run: dotnet format --verify-no-changes --no-restore
+        run: dotnet format --verify-no-changes --no-restore --severity error
