@@ -267,13 +267,11 @@ public static class Log
 
 	#region Trace
 
-	[Conditional(MantisEngine.MANTIS_LOG_TRACE)]
 	public static void Trace<T>(LogCategory category, T instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0) where T : ISpanFormattable
 	{
 		Trace(category, $"{instance}", file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_TRACE)]
 	public static void Trace(
 		LogCategory category,
 		[InterpolatedStringHandlerArgument(nameof(category))] scoped ref LogInterpolatedStringHandler<TraceLevel> interpolationHandler,
@@ -284,13 +282,11 @@ public static class Log
 		LogInterpolatedString(LogLevel.Trace, category, interpolationHandler.Message, interpolationHandler.MessageLength, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_TRACE)]
 	public static void Trace(LogCategory category, string message, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		LogString(LogLevel.Trace, category, message, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_TRACE)]
 	public static void Trace(LogCategory category, object? instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		Trace(category, $"{instance}", file, member, line);
@@ -300,13 +296,11 @@ public static class Log
 
 	#region Debug
 
-	[Conditional(MantisEngine.MANTIS_LOG_DEBUG)]
 	public static void Debug<T>(LogCategory category, T instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0) where T : ISpanFormattable
 	{
 		Debug(category, $"{instance}", file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_DEBUG)]
 	public static void Debug(
 		LogCategory category,
 		[InterpolatedStringHandlerArgument(nameof(category))] scoped ref LogInterpolatedStringHandler<DebugLevel> interpolationHandler,
@@ -317,13 +311,11 @@ public static class Log
 		LogInterpolatedString(LogLevel.Debug, category, interpolationHandler.Message, interpolationHandler.MessageLength, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_DEBUG)]
 	public static void Debug(LogCategory category, string message, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		LogString(LogLevel.Debug, category, message, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_DEBUG)]
 	public static void Debug(LogCategory category, object? instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		Debug(category, $"{instance}", file, member, line);
@@ -333,13 +325,11 @@ public static class Log
 
 	#region Info
 
-	[Conditional(MantisEngine.MANTIS_LOG_INFO)]
 	public static void Info<T>(LogCategory category, T instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0) where T : ISpanFormattable
 	{
 		Info(category, $"{instance}", file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_INFO)]
 	public static void Info(
 		LogCategory category,
 		[InterpolatedStringHandlerArgument(nameof(category))] scoped ref LogInterpolatedStringHandler<InfoLevel> interpolationHandler,
@@ -350,13 +340,11 @@ public static class Log
 		LogInterpolatedString(LogLevel.Info, category, interpolationHandler.Message, interpolationHandler.MessageLength, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_INFO)]
 	public static void Info(LogCategory category, string message, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		LogString(LogLevel.Info, category, message, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_INFO)]
 	public static void Info(LogCategory category, object? instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		Info(category, $"{instance}", file, member, line);
@@ -366,13 +354,11 @@ public static class Log
 
 	#region Warn
 
-	[Conditional(MantisEngine.MANTIS_LOG_WARN)]
 	public static void Warn<T>(LogCategory category, T instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0) where T : ISpanFormattable
 	{
 		Warn(category, $"{instance}", file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_WARN)]
 	public static void Warn(
 		LogCategory category,
 		[InterpolatedStringHandlerArgument(nameof(category))] scoped ref LogInterpolatedStringHandler<WarnLevel> interpolationHandler,
@@ -383,13 +369,11 @@ public static class Log
 		LogInterpolatedString(LogLevel.Warn, category, interpolationHandler.Message, interpolationHandler.MessageLength, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_WARN)]
 	public static void Warn(LogCategory category, string message, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		LogString(LogLevel.Warn, category, message, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_WARN)]
 	public static void Warn(LogCategory category, object? instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		Warn(category, $"{instance}", file, member, line);
@@ -399,13 +383,11 @@ public static class Log
 
 	#region Error
 
-	[Conditional(MantisEngine.MANTIS_LOG_ERROR)]
 	public static void Error<T>(LogCategory category, T instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0) where T : ISpanFormattable
 	{
 		Error(category, $"{instance}", file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_ERROR)]
 	public static void Error(
 		LogCategory category,
 		[InterpolatedStringHandlerArgument(nameof(category))] scoped ref LogInterpolatedStringHandler<ErrorLevel> interpolationHandler,
@@ -416,13 +398,11 @@ public static class Log
 		LogInterpolatedString(LogLevel.Error, category, interpolationHandler.Message, interpolationHandler.MessageLength, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_ERROR)]
 	public static void Error(LogCategory category, string message, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		LogString(LogLevel.Error, category, message, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_ERROR)]
 	public static void Error(LogCategory category, object? instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		Error(category, $"{instance}", file, member, line);
@@ -432,13 +412,11 @@ public static class Log
 
 	#region Fatal
 
-	[Conditional(MantisEngine.MANTIS_LOG_FATAL)]
 	public static void Fatal<T>(LogCategory category, T instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0) where T : ISpanFormattable
 	{
 		Fatal(category, $"{instance}", file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_FATAL)]
 	public static void Fatal(
 		LogCategory category,
 		[InterpolatedStringHandlerArgument(nameof(category))] scoped ref LogInterpolatedStringHandler<FatalLevel> interpolationHandler,
@@ -449,13 +427,11 @@ public static class Log
 		LogInterpolatedString(LogLevel.Fatal, category, interpolationHandler.Message, interpolationHandler.MessageLength, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_FATAL)]
 	public static void Fatal(LogCategory category, string message, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		LogString(LogLevel.Fatal, category, message, file, member, line);
 	}
 
-	[Conditional(MantisEngine.MANTIS_LOG_FATAL)]
 	public static void Fatal(LogCategory category, object? instance, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
 	{
 		Fatal(category, $"{instance}", file, member, line);
