@@ -4,18 +4,13 @@ namespace Mantis.Core.Logging.Sinks;
 
 public sealed class ConsoleLogSink : ILogSink
 {
-	private const string NORMAL = "\x1b[39m";
-	private const string RED = "\x1b[91m";
-	private const string GREEN = "\x1b[92m";
-	private const string YELLOW = "\x1b[93m";
-	private const string BLUE = "\x1b[94m";
-	private const string MAGENTA = "\x1b[95m";
-	private const string CYAN = "\x1b[96m";
-	private const string GREY = "\x1b[97m";
-	private const string BOLD = "\x1b[1m";
-	private const string NOBOLD = "\x1b[22m";
-	private const string UNDERLINE = "\x1b[4m";
-	private const string NOUNDERLINE = "\x1b[24m";
+	private const string DEFAULT = "\x1b[39m";
+	private const string BRIGHT_BLACK = "\x1b[90m";
+	private const string BRIGHT_RED = "\x1b[91m";
+	private const string BRIGHT_GREEN = "\x1b[92m";
+	private const string BRIGHT_YELLOW = "\x1b[93m";
+	private const string BRIGHT_MAGENTA = "\x1b[95m";
+	private const string BRIGHT_CYAN = "\x1b[96m";
 	private const string REVERSE = "\x1b[7m";
 	private const string NOREVERSE = "\x1b[27m";
 
@@ -84,7 +79,7 @@ public sealed class ConsoleLogSink : ILogSink
 		LogHelper.Append("]", characters, ref position);
 		LogHelper.Append(Environment.NewLine, characters, ref position);
 		LogHelper.Append(entry.Message.AsSpan(0, entry.MessageLength), characters, ref position);
-		LogHelper.Append(NORMAL + NOREVERSE, characters, ref position);
+		LogHelper.Append(DEFAULT + NOREVERSE, characters, ref position);
 	}
 
 	private static int GetEstimatedCharacterCount(in LogEntry entry, string levelColor, string levelName, ReadOnlySpan<char> filePath)
@@ -101,7 +96,7 @@ public sealed class ConsoleLogSink : ILogSink
 			entry.MessageLength +
 			10 + // line
 			Environment.NewLine.Length +
-			NORMAL.Length +
+			DEFAULT.Length +
 			NOREVERSE.Length +
 			19; // string literals
 	}
@@ -110,13 +105,13 @@ public sealed class ConsoleLogSink : ILogSink
 	{
 		return level switch
 		{
-			LogLevel.Fatal => RED + REVERSE,
-			LogLevel.Error => RED,
-			LogLevel.Warn => YELLOW,
-			LogLevel.Info => NORMAL,
-			LogLevel.Debug => GREEN,
-			LogLevel.Trace => BLUE,
-			_ => MAGENTA,
+			LogLevel.Fatal => BRIGHT_RED + REVERSE,
+			LogLevel.Error => BRIGHT_RED,
+			LogLevel.Warn => BRIGHT_YELLOW,
+			LogLevel.Info => BRIGHT_GREEN,
+			LogLevel.Debug => BRIGHT_CYAN,
+			LogLevel.Trace => BRIGHT_BLACK,
+			_ => BRIGHT_MAGENTA,
 		};
 	}
 
