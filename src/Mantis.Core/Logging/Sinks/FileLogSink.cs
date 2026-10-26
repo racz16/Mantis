@@ -58,6 +58,8 @@ public sealed class FileLogSink : ILogSink
 		LogHelper.Append("] [", characters, ref position);
 		LogHelper.Append(LogHelper.ToDateTimeUtc(entry.Timestamp), characters, ref position, LogHelper.DATE_FORMAT);
 		LogHelper.Append("] [", characters, ref position);
+		LogHelper.Append(entry.FrameIndex, characters, ref position);
+		LogHelper.Append("] [", characters, ref position);
 		ReadOnlySpan<char> threadName = entry.Thread.Name;
 		if (threadName.IsEmpty)
 		{
@@ -84,13 +86,14 @@ public sealed class FileLogSink : ILogSink
 			levelName.Length +
 			entry.Category.ToString().Length +
 			LogHelper.DATE_FORMAT_LENGTH +
+			20 + // frame index
 			(entry.Thread.Name?.Length ?? 10) +
 			filePath.Length +
 			entry.Member.Length +
 			entry.MessageLength +
 			10 + // line
 			Environment.NewLine.Length +
-			16; // string literals
+			19; // string literals
 	}
 
 	public void Flush()

@@ -5,6 +5,7 @@ public readonly struct LogEntry
 	public required LogLevel Level { get; init; }
 	public required LogCategory Category { get; init; }
 	public required long Timestamp { get; init; }
+	public required ulong FrameIndex { get; init; }
 	public required Thread Thread { get; init; }
 	public required string File { get; init; }
 	public required string Member { get; init; }
