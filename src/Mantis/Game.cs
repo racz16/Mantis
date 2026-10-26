@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 using Mantis.Core;
 using Mantis.Core.Logging;
 using Mantis.Platform;
@@ -28,6 +26,8 @@ public abstract class Game
 			[
 				new("Threading", InitializeThreading, DisposeThreading),
 				new("Logging", InitializeLogging, DisposeLogging),
+				new("Time", InitializeTime, DisposeTime),
+				new("Frame statistics", InitializeFrameStatistics, DisposeFrameStatistics),
 				new("Platform", InitializePlatform, DisposePlatform),
 				new("Main window", InitializeMainWindow, DisposeMainWindow),
 				new("User", UserInitialize, UserDispose),
@@ -70,6 +70,16 @@ public abstract class Game
 	protected virtual LogInitializationDescriptor CreateLogInitializationDescriptor()
 	{
 		return new();
+	}
+
+	private void InitializeTime()
+	{
+		Time.Initialize();
+	}
+
+	private void InitializeFrameStatistics()
+	{
+		FrameStatistics.Initialize();
 	}
 
 	private void InitializePlatform()
@@ -122,24 +132,22 @@ public abstract class Game
 
 	private void MainLoop()
 	{
-		// TODO: move it to time handling
-		var sw = Stopwatch.StartNew();
+		Time.Reset();
+		FrameStatistics.Start(Time.FrameTimestamp);
 		while (!shouldQuit)
 		{
 			//Log.Trace(LogCategory.Core, "Frame started");
+			Time.BeginFrame();
+			FrameStatistics.Update();
 			PlatformContext.PumpEvents();
 			PlatformContext.DispatchEvents();
 			MainThread.Drain();
-			// TODO: move it to time handling
-			float deltaTime = sw.ElapsedTicks * 1f / Stopwatch.Frequency;
-			sw.Restart();
 
-			Update(deltaTime);
+			Update();
 		}
 	}
 
-	// TODO: move it to time handling
-	protected virtual void Update(float deltaTime) { }
+	protected virtual void Update() { }
 
 	private void DisposeSubsystems()
 	{
@@ -171,6 +179,16 @@ public abstract class Game
 	private static void DisposeLogging()
 	{
 		Log.Dispose();
+	}
+
+	private static void DisposeFrameStatistics()
+	{
+		FrameStatistics.Dispose();
+	}
+
+	private static void DisposeTime()
+	{
+		Time.Dispose();
 	}
 
 	private void DisposeThreading()

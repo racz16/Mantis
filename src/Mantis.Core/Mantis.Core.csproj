@@ -6,6 +6,7 @@
 
 	<ItemGroup>
 		<None Include="README.md" Pack="true" PackagePath="/" />
+		<InternalsVisibleTo Include="Mantis" />
 	</ItemGroup>
 
 </Project>
